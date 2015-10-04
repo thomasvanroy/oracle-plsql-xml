@@ -3,7 +3,7 @@ create or replace PACKAGE PL$GEN_XML AS
 * Project XMLDOM generate XML document
 * Author: Van Roy Thomas
 * Description
-* Create an XML file with the DBMS_XMLDOM file.
+* Create an XML file with the DBMS_XMLDOM package.
 *
 */
  

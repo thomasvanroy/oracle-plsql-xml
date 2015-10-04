@@ -10,9 +10,6 @@ create or replace PACKAGE BODY PL$GEN_XML AS
   G_XML_ROOT_NODE    DBMS_XMLDOM.DOMNode;
   G_XML_ROOTELEMENT  DBMS_XMLDOM.DOMElement;
   G_XML_Attribute    DBMS_XMLDOM.DOMAttr;
-  
-  
-
 
 --------------------------------------------------------------------------------
 -- LOCAL PRIVATE PROCEDURE set_xml_document
@@ -100,7 +97,7 @@ create or replace PACKAGE BODY PL$GEN_XML AS
 --------------------------------------------------------------------------------
 -- LOCAL PRIVATE FUNCTION addDOMNodeAttributes
 --------------------------------------------------------------------------------  
-  PROCEDURE addDOMNodeAttributes(p_node_attributes IN PL$XML_DOM.attributes_table_tp
+  PROCEDURE addDOMNodeAttributes(p_node_attributes IN PL$GEN_XML.attributes_table_tp
                                , p_xml_element     IN DBMS_XMLDOM.DOMElement) AS
    -- declare
    l_key    VARCHAR2(100);
@@ -128,7 +125,7 @@ create or replace PACKAGE BODY PL$GEN_XML AS
 --------------------------------------------------------------------------------  
   FUNCTION addDOMElement(p_xml_element     IN DBMS_XMLDOM.DOMElement
                        , p_parent_node     IN VARCHAR2
-                       , p_node_attributes IN PL$XML_DOM.attributes_table_tp)
+                       , p_node_attributes IN PL$GEN_XML.attributes_table_tp)
     RETURN DBMS_XMLDOM.DOMNode AS
    -- declare
    l_root_node   DBMS_XMLDOM.DOMNode := get_xml_root_node();
